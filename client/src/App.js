@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import { Header } from "./containers/Public";
+import { Home, Login } from "./containers/Public";
 import { path } from "./ultils/constant";
 
 function App() {
   return (
     <div className="w-screen h-screen bg-primary">
-      {/* <Routes>
-        <Route path={path.HOME} />
-      
-      </Routes> */}
-      app
+      <Routes>
+        <Route path={path.HOME} element={<Home />}>
+          <Route path={path.LOGIN} element={<Login />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
