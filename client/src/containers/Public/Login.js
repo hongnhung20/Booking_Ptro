@@ -9,6 +9,7 @@ const Login = () => {
   const dispath = useDispatch();
   const [isRegister, setIsRegister] = useState(location.state?.flag);
   const [payload, setPayload] = useState({ phone: "", password: "", name: "" });
+  const [invalidFields, isInvalidFields] = useState([]);
 
   useEffect(() => {
     setIsRegister(location.state?.flag);
@@ -16,9 +17,16 @@ const Login = () => {
 
   const handleSubmit = async () => {
     console.log(payload);
-    dispath(actions.register(payload));
-    // console.log(response);
+    // isRegister
+    //   ? dispath(actions.register(payload))
+    //   : dispath(actions.login(payload));
   };
+
+  const validate = (payload) => {
+    let invalids = 0;
+    let fields = Object.entries(payload);
+  };
+
   return (
     <div className="bg-white  w-[600px] p-[30px] pb-[100px] rounded-md shadow-sm ">
       <h3 className="font-semibold text-2xl mb-5">
